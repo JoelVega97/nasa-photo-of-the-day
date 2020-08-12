@@ -2,12 +2,10 @@ import React from "react";
 import {BASE_URL, API} from '../index'
 import axios from 'axios'
 
-//DATA.DATE
+//EXPLANATION
 
-export default function Title(props){
-    const {date} = props
-
+export default function Text({text}){
     return (
-        <p>{date}</p>
+    <p className = 'explain'>{text}</p>
     )
 }
