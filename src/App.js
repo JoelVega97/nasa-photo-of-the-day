@@ -1,12 +1,9 @@
 import React, {useState, useEffect}  from "react";
 import "./App.css";
-import axios from 'axios'
-import {BASE_URL, API} from './index'
-import Title from './Components/Title'
-import Date from './Components/Date'
-import Img from './Components/Img'
-import Explaination from './Components/Explaination'
-import Copyright from './Components/Copyright'
+import axios from 'axios';
+import {BASE_URL, API} from './index';
+import Header from "./Components/Header";
+import MidContainer from "./Components/MidContainer";
 
 //'api_key=Aj87JwreYfnH0gR4XNrmVlkl82xpg57D7vYSFZ1o'
 //'https://api.nasa.gov'
@@ -39,15 +36,8 @@ function App() {
   return (
     <div className="App">
 
-      <div>
-        <Title title ={nasaData.title} />
-        <Date date = {nasaData.date} />
-      </div>
-      <div>
-        <Img url = {nasaData.url} />
-        <Explaination text = {nasaData.explanation}/>
-        <Copyright cc = {nasaData.copyright}/>
-      </div>
+      <Header title = {nasaData.title} date = {nasaData.date} />
+      <MidContainer url = {nasaData.url} text = {nasaData.explanation} cc = {nasaData.copyright} />
 
     </div>
   );
